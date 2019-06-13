@@ -1,0 +1,36 @@
+.img-width {
+    width: 20%
+}
+
+.display-files {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.display-option {
+    padding-left: 0.7em;
+    padding-right: 0.7em
+}
+
+.text-folder {
+    margin-left: 1em;
+}
+
+.link {
+    color: #424242;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}

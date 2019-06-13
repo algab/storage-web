@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 upload-btn-wrapper">
+                <button mat-raised-button type="submit" class="btn btn-rose pull-right">
+                    <i class="material-icons">cloud_upload</i> Upload
+                </button>
+                <input type="file" name="myfile" (change)="uploadFile($event)" />
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Arquivos</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12 display-files" *ngFor="let file of files">
+                                <img [src]="file.preview" [alt]="file.name" class="img-width">
+                                <div class="text-folder">
+                                    <div mat-raised-button [matTooltip]="file.name">
+                                        {{ file.name }}
+                                    </div>
+                                    <div class="row">
+                                        <div mat-raised-button matTooltip="Visualizar" class="display-option" (click)="view(file.url,file.preview,file.name)">
+                                            <i class="material-icons">open_in_new</i>
+                                        </div>
+                                        <div mat-raised-button matTooltip="Download" class="display-option">
+                                            <a [href]="file.url" target="_blank" class="link">
+                                                <i class="material-icons">cloud_download</i>
+                                            </a>
+                                        </div>
+                                        <div mat-raised-button matTooltip="Excluir" class="display-option" (click)="deleteFile(file.name)">
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

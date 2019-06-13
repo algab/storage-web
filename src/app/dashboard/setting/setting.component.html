@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Informações</h4>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-info"><b>Nome do Bucket</b></td>
+                                    <td>{{ name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info"><b>Data de Criação</b></td>
+                                    <td>{{ created?.date }} - {{ created?.time }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info"><b>Última Modificação</b></td>
+                                    <td>{{ modified?.date}} - {{ modified?.time }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info"><b>Tamanho</b></td>
+                                    <td>{{ size }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Alterar privacidade do Bucket</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-checkbox [checked]="private" (change)="privateBucket()">Bucket {{ stateBucket }}
+                                </mat-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Gerar token para uso em aplicações de terceiros</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button mat-raised-button (click)="generateToken()">Gerar Token</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
