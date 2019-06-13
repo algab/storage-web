@@ -1,3 +1,3 @@
 # Storage Web
 
-Aplicação desenvolvida utilizando conceitos e técnicas do Angular.
+[Storage Files](https://github.com/algab/storage-files) Application Web Interface.

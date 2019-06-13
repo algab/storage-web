@@ -1,6 +1,6 @@
 {
   "name": "storage-web",
-  "description": "Interface web para a aplicação Storage Files.",
+  "description": "Storage Files Application Web Interface.",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
