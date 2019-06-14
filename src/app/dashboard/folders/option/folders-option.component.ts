@@ -89,7 +89,7 @@ export class FoldersOptionComponent implements OnInit {
     <h1 mat-dialog-title>Renomear pasta</h1>
     <div mat-dialog-content>
         <mat-form-field>
-            <input matInput [(ngModel)]="name" name="subfolder" placeholder="Digite o nome da pasta">
+            <input matInput [(ngModel)]="name" name="folder" placeholder="Digite o nome da pasta">
         </mat-form-field>
     </div>
     <div mat-dialog-actions>

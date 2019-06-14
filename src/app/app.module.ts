@@ -14,11 +14,12 @@ import {
   MatSelectModule,
   MatTabsModule,
   MatSnackBarModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule
 } from '@angular/material'
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent, DialogLoginPassword } from './login/login.component';
 import { AppRoutingModule } from './app.routing';
 import { Interceptor } from './utils/auth/interceptor.module';
 import { AuthGuardSerivce } from './utils/guard/auht-guard.service';
@@ -42,13 +43,18 @@ import { environment } from '../environments/environment';
     MatTooltipModule,
     MatTabsModule,
     MatSnackBarModule,
+    MatDialogModule,
     AppRoutingModule,
     Interceptor,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DialogLoginPassword
+  ],
+  entryComponents: [
+    DialogLoginPassword
   ],
   providers: [
     AuthGuardSerivce
