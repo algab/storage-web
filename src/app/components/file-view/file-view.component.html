@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Visualizar Arquivo</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngIf="typeFile === 'photo'">
+            <img [src]="data.preview" style="width: 100%" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngIf="typeFile === 'video'">
+            <video width="100%" controls>
+                <source [src]="data.url" />
+            </video>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngIf="typeFile === 'music'">
+            <audio width="100%" controls>
+                <source [src]="data.url" />
+            </audio>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngIf="typeFile === 'zip'">
+            <img src="../../../assets/img/zip.png" style="width: 100%" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngIf="typeFile === 'pdf'">
+            <img src="../../../assets/img/pdf.png" style="width: 100%" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-header card-header-info card-header-icon">
+                    <div class="card-icon"><i class="material-icons">info</i></div>
+                    <h4 class="card-title">Detalhes</h4>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="text-info"><b>Nome do Arquivo</b></td>
+                                <td>{{ data.name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-info"><b>Data de Upload</b></td>
+                                <td>{{ dateUpload | date: "dd/MM/yyyy" }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-info"><b>Tamanho</b></td>
+                                <td>{{ size }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Fechar</button>
+</div>

@@ -1,0 +1,17 @@
+.card-login {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.link {
+    color: white;
+    font-size: 25px;
+}
+
+.button {
+    cursor: pointer; 
+    border: none; 
+    background-color: white; 
+    font-size: 15px; 
+    color: #424242;
+}

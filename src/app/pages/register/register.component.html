@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6" style="padding-top: 1.5em; margin-left: auto; margin-right: auto">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Criar Conta</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="formRegister" (submit)="save()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Nome" type="text" formControlName="name"
+                                            (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Nick" type="text" formControlName="nick"
+                                            (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email" type="email" name="email"
+                                            formControlName="email" (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Bucket" type="text" formControlName="bucket"
+                                            (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Senha" type="password" formControlName="password"
+                                            minlength="6" (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Confirmar senha" type="password"
+                                            formControlName="passwordConfirm" minlength="6" (input)="validate()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="display: flex; justify-content: center">
+                                    <button mat-raised-button type="submit" class="btn btn-info pull-right"
+                                        [disabled]="buttonRegister">
+                                        Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

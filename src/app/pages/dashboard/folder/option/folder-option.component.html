@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header card-header-icon card-header-info">
+        <div class="card-icon">
+            <i class="material-icons">list</i>
+        </div>
+        <h4 class="card-title">Minhas Pastas</h4>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead class="text-info">
+                <th>Nome da Pasta</th>
+                <th>Data de Criação</th>
+                <th>Última Modificação</th>
+                <th>Tamanho</th>
+                <th>Opções</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let folder of folders">
+                    <td>{{ folder?.name }}</td>
+                    <td>{{ folder?.created | date: "dd/MM/yyyy"  }}</td>
+                    <td>{{ folder?.modified | date: "dd/MM/yyyy" }}</td>
+                    <td class="text-danger">{{ folder?.size }}</td>
+                    <td>
+                        <button mat-raised-button class="btn btn-success" (click)="edit(folder?.name)">
+                            <i class="material-icons">edit</i> Renomear
+                        </button>
+                        <button mat-raised-button class="btn btn-danger" (click)="delete(folder?.name)">
+                            <i class="material-icons">delete_forever</i> Excluir
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

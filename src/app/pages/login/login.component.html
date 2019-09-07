@@ -1,0 +1,50 @@
+<div class="main-content" style="padding-top: 6rem">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 card-login">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h3 class="card-title">LOGIN</h3>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="formLogin" (submit)="login()">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email" type="email" name="email"
+                                            formControlName="email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Senha" type="password" name="password"
+                                            formControlName="password">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12"
+                                    style="display: flex; justify-content: center">
+                                    <button mat-raised-button type="submit" class="btn btn-info"
+                                        [disabled]="!formLogin.valid">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer" style="display: flex; justify-content: center; flex-direction: column">
+                        <button class="button" type="submit" (click)="register()">
+                            Não tem uma conta ? Cadastre-se
+                        </button>
+                        <button class="button" type="submit" (click)="password()">
+                            Esqueceu a senha ?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
