@@ -36,15 +36,18 @@ export class FolderOptionComponent implements OnInit {
         const dialogRef = this.dialog.open(FolderEditComponent, {
             width: '800px'
         });
-
         dialogRef.afterClosed().subscribe(result => {
             if (result !== undefined) {
                 const bucket = JSON.parse(localStorage.getItem('user')).bucket.name;
                 this.service.editFolder(name, { bucket, folder: result }).subscribe(() => {
                     this.listFolders();
                 }, err => {
-                    if (err.status === 409) {
+                    if (err.status === 409 && err.error.Message === 'Folder with the same name already exists') {
                         this.snackBar.open('Pasta com mesmo nome já existe.', 'FECHAR', {
+                            duration: 2000
+                        });
+                    } else if (err.status === 409 && err.error.Message === 'Folder is not empty') {
+                        this.snackBar.open('Pasta não está vazia', 'FECHAR', {
                             duration: 2000
                         });
                     } else {
@@ -61,7 +64,6 @@ export class FolderOptionComponent implements OnInit {
         const dialogRef = this.dialog.open(FolderDeleteComponent, {
             width: '800px'
         });
-
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 const bucket = JSON.parse(localStorage.getItem('user')).bucket.name;
