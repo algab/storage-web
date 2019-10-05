@@ -59,17 +59,14 @@ export class RegisterComponent implements OnInit {
 
     async save() {
         try {
-            let user = this.formRegister.value;
-            const bucket = user.bucket;
+            const user = this.formRegister.value;
+            const nameBucket = user.bucket;
             delete user.bucket;
             delete user.passwordConfirm;
             await this.service.saveUser(user);
+            await this.service.saveBucket({ name: nameBucket, user_nick: user.nick, private: true });
             const data = await this.service.login(user.email, user.password);
             localStorage.setItem('user', JSON.stringify(data));
-            user = data;
-            user.bucket = { name: bucket, user_nick: user.nick, private: true };
-            await this.service.saveBucket(user.bucket);
-            localStorage.setItem('user', JSON.stringify(user));
             this.router.navigateByUrl('/dashboard/home');
         } catch (error) {
             if (error.status === 409) {
