@@ -1,4 +1,5 @@
 export interface Bucket {
-    nick: string,
     name: string
+    user_nick: string,
+    private: boolean,
 }
